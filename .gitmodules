@@ -1,0 +1,6 @@
+[submodule "Contact-Rich-Manipulation-v2"]
+	path = Contact-Rich-Manipulation-v2
+	url = https://github.com/IROL-SSU/Contact-Rich-Manipulation-v2.git
+[submodule "2D-PDM_DINOv3_SigLIP"]
+	path = 2D-PDM_DINOv3_SigLIP
+	url = https://github.com/IROL-SSU/2D-PDM_DINOv3_SigLIP.git
