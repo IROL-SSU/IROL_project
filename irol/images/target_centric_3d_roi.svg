@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="820" viewBox="0 0 1600 820">
+<defs>
+ <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6Z" fill="#334155"/></marker>
+ <pattern id="grid" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M18 0H0V18" fill="none" stroke="#CBD5E1" stroke-width="1"/></pattern>
+ <filter id="s"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity=".12"/></filter>
+</defs>
+<rect width="1600" height="820" fill="#fff"/>
+<text x="800" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-size="32" font-weight="700" fill="#13233F">Target-Centric 3D ROI Definition</text>
+<text x="800" y="82" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#64748B">Approximate target localization from mask + RGB-D depth, followed by uncertainty-aware local region setting</text>
+
+<!-- panel 1 -->
+<rect x="35" y="115" width="440" height="585" rx="18" fill="#F3F8FD" stroke="#4D83B3" stroke-width="2"/>
+<circle cx="70" cy="150" r="22" fill="#2F6FA8"/><text x="70" y="158" text-anchor="middle" font-family="Arial" font-size="20" font-weight="700" fill="white">1</text>
+<text x="105" y="158" font-family="Arial" font-size="23" font-weight="700" fill="#13233F">Target Mask + Depth</text>
+<!-- shelf view -->
+<rect x="85" y="205" width="340" height="205" rx="10" fill="#EEE7DC" stroke="#A78B6D"/>
+<line x1="100" y1="365" x2="410" y2="365" stroke="#8B7358" stroke-width="7"/>
+<rect x="215" y="255" width="105" height="110" rx="5" fill="#5B91C7" stroke="#245E95" stroke-width="3"/>
+<text x="267" y="321" text-anchor="middle" font-family="Arial" font-size="38" font-weight="700" fill="white">T</text>
+<rect x="150" y="285" width="92" height="80" rx="5" fill="#D89545" stroke="#AE6A1B" stroke-width="3"/>
+<text x="196" y="337" text-anchor="middle" font-family="Arial" font-size="32" font-weight="700" fill="white">B</text>
+<circle cx="355" cy="302" r="30" fill="#6AA76A" stroke="#3C7E3C" stroke-width="3"/>
+<!-- mask/depth -->
+<rect x="77" y="448" width="155" height="145" rx="9" fill="#182334"/>
+<path d="M143 478h62v91h-62z" fill="#4E88C3"/><path d="M105 512h57v57h-57z" fill="#D88935"/>
+<text x="154" y="618" text-anchor="middle" font-family="Arial" font-size="15" fill="#334155">Target instance mask</text>
+<rect x="275" y="448" width="155" height="145" rx="9" fill="url(#grid)" stroke="#CBD5E1"/>
+<rect x="326" y="477" width="62" height="92" fill="#6FA6D0"/><rect x="291" y="512" width="56" height="57" fill="#E6A45D"/>
+<text x="352" y="618" text-anchor="middle" font-family="Arial" font-size="15" fill="#334155">Aligned depth</text>
+<rect x="90" y="646" width="330" height="35" rx="17" fill="#E6F0FA"/>
+<text x="255" y="669" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#2F6FA8">Position source: RGB-D geometry, not VLM</text>
+
+<line x1="488" y1="405" x2="545" y2="405" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+
+<!-- panel 2 -->
+<rect x="555" y="115" width="430" height="585" rx="18" fill="#F7F3FC" stroke="#8062A8" stroke-width="2"/>
+<circle cx="590" cy="150" r="22" fill="#8062A8"/><text x="590" y="158" text-anchor="middle" font-family="Arial" font-size="20" font-weight="700" fill="white">2</text>
+<text x="625" y="158" font-family="Arial" font-size="23" font-weight="700" fill="#13233F">Approximate 3D Center</text>
+<!-- point cloud -->
+<rect x="610" y="205" width="320" height="325" rx="12" fill="#FBFAFD" stroke="#D8CCE8"/>
+<g fill="#5B91C7" opacity=".9">
+<circle cx="720" cy="285" r="6"/><circle cx="745" cy="270" r="5"/><circle cx="770" cy="292" r="6"/><circle cx="805" cy="278" r="5"/><circle cx="835" cy="300" r="6"/>
+<circle cx="705" cy="325" r="5"/><circle cx="748" cy="315" r="6"/><circle cx="790" cy="330" r="5"/><circle cx="825" cy="342" r="6"/>
+<circle cx="715" cy="370" r="6"/><circle cx="755" cy="365" r="5"/><circle cx="795" cy="382" r="6"/><circle cx="835" cy="376" r="5"/>
+<circle cx="725" cy="420" r="5"/><circle cx="760" cy="408" r="6"/><circle cx="805" cy="425" r="5"/>
+</g>
+<g fill="#D89545" opacity=".9"><circle cx="680" cy="370" r="6"/><circle cx="660" cy="392" r="5"/><circle cx="690" cy="415" r="6"/><circle cx="670" cy="438" r="5"/></g>
+<circle cx="770" cy="350" r="13" fill="white" stroke="#7C3AED" stroke-width="4"/>
+<circle cx="770" cy="350" r="4" fill="#7C3AED"/>
+<line x1="770" y1="350" x2="895" y2="250" stroke="#7C3AED" stroke-width="2"/>
+<text x="880" y="236" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700" fill="#7C3AED">c<tspan baseline-shift="sub" font-size="12">T</tspan><tspan fill="#64748B"> (observed center)</tspan></text>
+<!-- axes -->
+<line x1="640" y1="485" x2="700" y2="485" stroke="#EF4444" stroke-width="3" marker-end="url(#a)"/>
+<line x1="640" y1="485" x2="640" y2="425" stroke="#2563EB" stroke-width="3" marker-end="url(#a)"/>
+<line x1="640" y1="485" x2="675" y2="452" stroke="#16A34A" stroke-width="3"/>
+<text x="708" y="492" font-family="Arial" font-size="16" fill="#EF4444">X</text><text x="630" y="418" font-family="Arial" font-size="16" fill="#2563EB">Z</text><text x="679" y="448" font-family="Arial" font-size="16" fill="#16A34A">Y</text>
+<rect x="615" y="560" width="310" height="84" rx="12" fill="#EEE8F6"/>
+<text x="770" y="588" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700" fill="#8062A8">Important</text>
+<text x="770" y="613" text-anchor="middle" font-family="Arial" font-size="15" fill="#334155">With partial occlusion, c<tspan baseline-shift="sub" font-size="11">T</tspan> is not the true object center.</text>
+<text x="770" y="636" text-anchor="middle" font-family="Arial" font-size="15" fill="#334155">The ROI must include localization uncertainty.</text>
+
+<line x1="998" y1="405" x2="1055" y2="405" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+
+<!-- panel 3 -->
+<rect x="1065" y="115" width="500" height="585" rx="18" fill="#F1FAF6" stroke="#4E9874" stroke-width="2"/>
+<circle cx="1100" cy="150" r="22" fill="#4E9874"/><text x="1100" y="158" text-anchor="middle" font-family="Arial" font-size="20" font-weight="700" fill="white">3</text>
+<text x="1135" y="158" font-family="Arial" font-size="23" font-weight="700" fill="#13233F">Uncertainty-Aware Local ROI</text>
+<!-- nested cuboids -->
+<polygon points="1210,285 1375,235 1480,300 1310,350" fill="#DDF4E7" opacity=".55" stroke="#4E9874" stroke-width="2"/>
+<polygon points="1210,285 1310,350 1310,540 1210,470" fill="#DDF4E7" opacity=".3" stroke="#4E9874" stroke-width="2"/>
+<polygon points="1310,350 1480,300 1480,485 1310,540" fill="#DDF4E7" opacity=".25" stroke="#4E9874" stroke-width="2"/>
+<g stroke="#4E9874" stroke-width="2" stroke-dasharray="8 6" fill="none"><path d="M1175 250l205-62 140 83-215 66z"/><path d="M1175 250v260l130 92V337"/><path d="M1520 271v255l-215 76"/></g>
+<g stroke="#8062A8" stroke-width="2" stroke-dasharray="7 5" fill="none"><path d="M1235 300l140-42 85 52-145 44z"/><path d="M1235 300v190l80 57V354"/><path d="M1460 310v185l-145 52"/></g>
+<!-- target -->
+<polygon points="1285,362 1370,337 1420,368 1333,395" fill="#76A7D4" stroke="#245E95" stroke-width="2"/>
+<polygon points="1285,362 1333,395 1333,490 1285,455" fill="#4E88C3" stroke="#245E95" stroke-width="2"/>
+<polygon points="1333,395 1420,368 1420,461 1333,490" fill="#6198CB" stroke="#245E95" stroke-width="2"/>
+<text x="1350" y="435" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="white">T</text>
+<!-- labels -->
+<line x1="1420" y1="410" x2="1518" y2="390" stroke="#245E95" stroke-width="2"/><text x="1515" y="383" text-anchor="end" font-family="Arial" font-size="15" font-weight="700" fill="#245E95">Observed target</text>
+<line x1="1450" y1="330" x2="1530" y2="325" stroke="#8062A8" stroke-width="2"/><text x="1532" y="320" text-anchor="end" font-family="Arial" font-size="15" font-weight="700" fill="#8062A8">Uncertainty margin</text>
+<line x1="1485" y1="275" x2="1530" y2="235" stroke="#4E9874" stroke-width="2"/><text x="1532" y="218" text-anchor="end" font-family="Arial" font-size="15" font-weight="700" fill="#4E9874">Gripper + safety margin</text>
+<!-- formula -->
+<rect x="1110" y="615" width="410" height="55" rx="12" fill="#E2F4E9" stroke="#98C8AD"/>
+<text x="1315" y="648" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#286A4D">ROI = observed geometry + uncertainty + manipulation margin</text>
+
+<rect x="210" y="735" width="1180" height="48" rx="24" fill="#EFF4F8"/>
+<text x="800" y="766" text-anchor="middle" font-family="Arial" font-size="19" font-weight="700" fill="#334155">Build a precise local representation only around the target — not for the entire shelf.</text>
+</svg>
