@@ -4,3 +4,7 @@
 [submodule "2D-PDM_DINOv3_SigLIP"]
 	path = 2D-PDM_DINOv3_SigLIP
 	url = https://github.com/IROL-SSU/2D-PDM_DINOv3_SigLIP.git
+[submodule "Contact-Rich-Manipulation-v1"]
+	path = Contact-Rich-Manipulation-v1
+	url = https://github.com/IROL-SSU/Contact-Rich-Manipulation-v1.git
+	branch = main
